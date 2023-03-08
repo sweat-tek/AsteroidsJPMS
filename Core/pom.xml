@@ -30,70 +30,49 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx</artifactId>
-            <version>${libGDX.version}</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-platform</artifactId>
-            <version>${libGDX.version}</version>
-            <classifier>natives-desktop</classifier>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-backend-lwjgl</artifactId>
-            <version>${libGDX.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-box2d</artifactId>
-            <version>${libGDX.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-box2d-platform</artifactId>
-            <classifier>natives-desktop</classifier>
-            <version>${libGDX.version}</version>
-            <scope>compile</scope>
-        </dependency>                
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-freetype</artifactId>
-            <version>${libGDX.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-freetype-platform</artifactId>    
-            <classifier>natives-desktop</classifier>
-            <version>${libGDX.version}</version>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
+            <artifactId>shadedlibgdx</artifactId>
         </dependency>
         <dependency>
             <groupId>dk.sdu.mmmi.cbse</groupId>
-            <artifactId>Asteroid</artifactId>
+            <artifactId>Common</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>dk.sdu.mmmi.cbse</groupId>
-            <artifactId>Collision</artifactId>
+            <artifactId>CommonEnemy</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>dk.sdu.mmmi.cbse</groupId>
-            <artifactId>Bullet</artifactId>
+            <artifactId>CommonBullet</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>dk.sdu.mmmi.cbse</groupId>
-            <artifactId>Enemy</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>dk.sdu.mmmi.cbse</groupId>
-            <artifactId>Player</artifactId>
+            <artifactId>CommonAsteroids</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeArtifactIds>shadedlibgdx</includeArtifactIds>
+                            <outputDirectory>../mods-mvn</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
