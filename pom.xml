@@ -69,6 +69,9 @@
                     <workingDirectory>.</workingDirectory>
                     <longModulepath>false</longModulepath>
                     <arguments>
+                        <argument>-XstartOnFirstThread</argument>
+                        <argument>-Dorg.lwjgl.util.Debug=true</argument>
+                        <argument>-Djava.library.path=mods-mvn</argument>
                         <argument>--module-path=mods-mvn</argument>
                         <argument>--class-path=libs/*</argument>
                         <!-- because spark.core is an automatic module and actually required,
