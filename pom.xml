@@ -69,10 +69,7 @@
                     <workingDirectory>.</workingDirectory>
                     <longModulepath>false</longModulepath>
                     <arguments>
-<!--                        
-                        On Mac Devices this line should not be commented out
                         <argument>-XstartOnFirstThread</argument>
--->
                         <argument>-Dorg.lwjgl.util.Debug=true</argument>
                         <argument>-Djava.library.path=libs</argument>
                         <argument>--module-path=mods-mvn</argument>
@@ -131,7 +128,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-dependency-plugin</artifactId>
-                        <version>3.0.2</version>
+                        <version>3.3.0</version>
                         <executions>
                             <execution>
                                 <id>copy-installed</id>
