@@ -81,6 +81,7 @@
                         in "java.lang.module.FindException: Module monitor.observer.zero not found";
                         strange... -->
                         <!--<argument>&#45;&#45;add-modules=monitor.observer.zero</argument>-->
+                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</argument>
                         <argument>--module=Core/dk.sdu.mmmi.cbse.main.Main</argument>
                     </arguments>
                 </configuration>
